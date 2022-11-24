@@ -6,9 +6,9 @@ from utils import get_variable_filter
 
 
 DATA_MAIN = pd.read_parquet('data/ipums_full_count_nyc_census_coded_20210801.parquet')
-with open('meta.json', 'r') as f:
+with open('data/meta.json', 'r') as f:
     DATA_META = json.load(f)
-DATA_VARIABLE, DATA_FILTER = get_variable_filter('cons.json', 'oov.json')
+DATA_VARIABLE, DATA_FILTER = get_variable_filter('data/cons.json', 'data/oov.json')
 def main():
     # st.write(df.head())
     charts = {
