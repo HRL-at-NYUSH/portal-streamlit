@@ -1,14 +1,14 @@
 import json
 
-def get_variable_filter(const_path, oov_path):
+oov = ["HISPAN", "FAMUNIT", "SCHOOL", "LABFORCE"]
+numericals = {'YEAR'}
+
+def get_variable_filter(const_path):
     with open(const_path, 'r') as f:
         const = json.load(f)
-    with open(oov_path, 'r') as f:
-        oov = json.load(f)
-    return remove_oov(const, oov)
+    return remove_oov(const)
 
-
-def remove_oov(const, oov):
+def remove_oov(const):
     va = {}
     fi = {}
     for graph, varlist in const['variables'].items():
@@ -18,3 +18,6 @@ def remove_oov(const, oov):
             continue
         fi[v] = [fv for fv in vfilist if fv not in oov]
     return va, fi
+
+def is_numerical(var):
+    return var in numericals

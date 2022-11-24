@@ -22,10 +22,7 @@
             "3": "American Indian or Alaska Native",
             "4": "Chinese",
             "5": "Japanese",
-            "6": "Other Asian or Pacific Islander",
-            "7": "Other race, nec",
-            "8": "Two major races",
-            "9": "Three or more major races"
+            "6": "Other Asian or Pacific Islander"
         }
     },
     "HISPAN": {
@@ -602,7 +599,7 @@
         "name": "Nativity",
         "description": "NATIVITY indicates whether respondents were native-born or foreign-born; for native-born respondents, it indicates whether their mothers and/or fathers were native-born or foreign-born. NATIVITY is constructed from the IPUMS variables BPL, MBPL, and FBPL. Those U.S. possessions and territories classified as \"U.S. outlying areas\" in BPL are considered foreign. For a similar variable that identifies those who are foreign or native born in 1970 for Puerto Rico, see NATIVPR.",
         "codes": {
-            "0": "N/A or unknown",
+            "-1": "N/A",
             "1": "Both parents native-born",
             "2": "Father foreign, mother native",
             "3": "Mother foreign, father native",
@@ -614,6 +611,7 @@
         "name": "Citizenship",
         "description": "CITIZEN reports the citizenship status of respondents, distinguishing between naturalized citizens and non-citizens. For 1900-1940, respondents who were not yet citizens but who had begun the naturalization process (\"received first papers\") are identified.",
         "codes": {
+            "-1": "N/A",
             "1": "Born abroad of American parents",
             "2": "Naturalized citizen",
             "3": "Not a citizen",
@@ -630,11 +628,11 @@
         "name": "Literacy",
         "description": "LIT indicates whether the respondent could read and/or write in any language.",
         "codes": {
+            "-1": "N/A",
             "1": "No, illiterate (cannot read nor write)",
             "2": "Can't read, can write",
             "3": "Can't write, can read",
-            "4": "Yes, literate (reads and writes)",
-            "9": "Unknown, illegible or blank"
+            "4": "Yes, literate (reads and writes)"
         }
     },
     "SCHOOL": {
@@ -649,7 +647,7 @@
     },
     "OCC1950": {
         "name": "Occupation",
-        "description": "\"New Workers\" are persons seeking employment for the first time, who had not yet secured their first job.",
+        "description": "OCC1950 applies the 1950 Census Bureau occupational classification system to occupational data, to enhance comparability across years. For pre-1940 samples created at Minnesota, the alphabetic responses supplied by enumerators were directly coded into the 1950 classification. For other samples, the information in the variable OCC was recoded into the 1950 classification. Codes above 970 are non-occupational responses retained in the historical census samples or blank/unknown. The design of OCC1950 is described at length in \" Integrated Occupation and Industry Codes and Occupational Standing Variables in the IPUMS.\". The composition of the 1950 occupation categories is described in detail in U.S. Bureau of the Census, Alphabetic Index of Occupations and Industries: 1950 (Washington D.C., 1950).\n\nIn 1850-1880, any laborer with no specified industry in a household with a farmer is recoded into farm labor. In 1860-1900, any woman with an occupational response of \"housekeeper\" enters the non-occupational category \"keeping house\" if she is related to the head of household. Cases affected by these imputation procedures are identified by an appropriate data quality flag.\n\nA parallel variable called OCC1990, available for the samples from 1950 onward, codes occupations into a simplified version of the 1990 occupational coding scheme.",
         "codes": {
             "0": "Accountants and auditors",
             "1": "Actors and actresses",
@@ -948,7 +946,7 @@
     },
     "IND1950": {
         "name": "IND1950",
-        "description": "IND1950 recodes information about industry into the 1950 Census Bureau industrial classification system and thus enhances comparability of industry data across all years included in the IPUMS",
+        "description": "IND1950 recodes information about industry into the 1950 Census Bureau industrial classification system and thus enhances comparability of industry data across all years included in the IPUMS. IND1950 was designed the same way as OCC1950 (Occupation, 1950 basis), the procedure for which is discussed in detail in \" Integrated Occupation and Industry Codes and Occupational Standing Variables in the IPUMS.\" The composition of the industry categories is described in detail in U.S. Bureau of the Census, Alphabetic Index of Occupations and Industries: 1950 (Washington, D.C., 1950).\n\nThe term \"labor force\" and other key employment concepts are defined in the documentation for EMPSTAT and LABFORCE.\n\nIn the 1850-1930 samples, the universe for IND1950 relied on persons having an occupation recorded in OCC.\n\nA parallel variable called IND1990, available for the samples from 1950 onward, codes occupations into a simplified version of the 1990 occupational coding scheme.",
         "codes": {
             "0": "N/A or none reported",
             "105": "Agriculture",
@@ -1125,7 +1123,7 @@
     "EMPSTAT": {
         "name": "Employment Status",
         "description": "EMPSTAT indicates whether the respondent was a part of the labor force -- working or seeking work -- and, if so, whether the person was currently unemployed. The second digit preserves additional related information available for some years but not others. See LABFORCE for a dichotomous variable that identifies whether a person participated in the labor force or not and is available for all years in the IPUMS.",
-        "codes": { "1": "Employed", "2": "Unemployed", "3": "Not in labor force" }
+        "codes": { "-1": "N/A", "1": "Employed", "2": "Unemployed", "3": "Not in labor force" }
     },
     "INCWAGE": {
         "name": "Pre-tax wage and Salary Income",
